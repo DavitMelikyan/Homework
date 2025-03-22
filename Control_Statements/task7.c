@@ -3,21 +3,27 @@
 int main(){
 
 	int num = 0;
+	int count = 0;
+	int tens = 1;
 	printf("Enter a number:");
 	scanf("%d", &num);
-	int numhundreds = (num/100);
-	int numtens = (num - numhundreds*100)/10;
-	int numunits = (num - numhundreds * 100 - numtens * 10);
-	if(num >= 0 && num <= 9) {
-	printf("%d \n",num);
-	} else if(num <= 99) {
-	// printf("%d, %d \n", (num / 10), (num - (num/10)*10));
-	printf("%d, %d \n", numtens, numunits);
-	} else if(num <= 999) {
-	// printf("%d, %d, %d", num/100, ((num - (num/100)*100) - num - num/100*100 - num
-	printf("%d, %d, %d \n", numhundreds, numtens, numunits);
-	} else {
-	printf("Error: Input smaller number \n");
-	}
+	int num2 = num;
+	int num3 = 0;
+	while (num2 > 0) {
+		num2 /= 10;
+		++count;
+}
+	--count;
+	while (count > 0) {
+		tens = tens * 10;
+		--count;
+}
+	while (tens > 0) {
+		num3 = num / tens;
+		num = num % tens;
+		tens /= 10;
+		printf("%d, ", num3);
+}
+	printf("\n");
 	return 0;
 }
