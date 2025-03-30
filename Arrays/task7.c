@@ -3,7 +3,7 @@
 int main() {
 	int size = 4;
 	int sum = 0;
-	int arr[4][4];
+	int arr[size][size];
 	for (int i = 0; i < size; ++i) {
 		for (int j = 0; j < size; ++j) {
 			printf("Enter a value: ");
